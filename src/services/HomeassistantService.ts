@@ -259,7 +259,7 @@ export default class HomeassistantService {
     const formatedImage = image.replace(/[\/.:;,+*?@^$%#!&"'`|<>{}\[\]()-\s\u0000-\u001F\u007F]/g, "_");
 
     return {
-      object_id: `${deviceName} ${name}`,
+      default_entity_id: `${deviceName} ${name}`,
       name: `${name}`,
       unique_id: `${deviceName} ${name}`,
       state_topic: `${config.mqtt.topic}/${deviceName}`,
@@ -296,7 +296,7 @@ export default class HomeassistantService {
     const formatedImage = image.replace(/[\/.:;,+*?@^$%#!&"'`|<>{}\[\]()-\s\u0000-\u001F\u007F]/g, "_");
 
     return {
-      object_id: `${deviceName} ${name}`,
+      default_entity_id: `${deviceName} ${name}`,
       name: `${name}`,
       unique_id: deviceName,
       state_topic: `${config.mqtt.topic}/${deviceName}/update`,
@@ -534,3 +534,4 @@ export default class HomeassistantService {
     this.publishMessage(client, topic, payload, {retain: true});
   }
 }
+
